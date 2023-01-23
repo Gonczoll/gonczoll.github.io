@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Megoldasok</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+    <div class="header-wrapper"> </div>
+    <div class="header-wrapper">
+      <!-- TITLE -->
+      <div class="header pagewidth" style="height: 189px;">
+        <h1><a href="#">Gönczöl</a></h1>
+        <h2>Welcome to my website</h2>
+        <!-- END TITLE --> </div>
+    </div>
+    <div class="nav-wrapper-outside">
+      <div class="nav-wrapper pagewidth">
+        <div class="nav">
+          <ul style="margin-top: -47px; height: 104px;">
+            <!-- MENU -->
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="iot.html">IoT</a></li>
+            <li><a href="Megoldasok.html">Megoldások</a></li>
+            <li><a href="Literatura.html" title="Literatura">Literatúra</a></li>
+            <li><a href="Architektura.html">Architecture studies</a></li>
+            <li><a href="Actual.html" title="Aktualitások">Aktualitások</a></li>
+            <!-- END MENU -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pagewidth" style="margin-top: 6px;">
+      <div class="page-wrap">
+        <div class="content">
+          <!-- CONTENT -->
+          <h3>Napelem monitoring</h3>
+          <p>2015-ben került telepítésre egy 3,6 kWp mérető napalemes erőmű a
+            házra. Műszaki jellemzői:</p>
+          <ul>
+            <li>14 panel 2 sztringen</li>
+            <li>Growatt 3000 TL inverter</li>
+            <li>WiFi modul</li>
+            <li>Tájolás:Majdnem teljesen déli (207°)</li>
+            <li>Dőlésszög:45°</li>
+            <li>Részben árnyékolt, mert pont előtte az utcán, szinte középen áll
+              egy villanyoszlop</li>
+          </ul>
+          <p><img src="images/napelem.png" alt="Napelem" title="Napelem" style="width: 777px; height: 194px;"><br>
+          </p>
+          <p>Az alapvető termelési adatokat a Growatt felületén is tudtam
+            ellenőrizni a kezdetektől, de akkoriban annyira kezdetleges volt a
+            felülete, hogy más megjelenítés után néztem. Így akadtam rá a
+            PVOutput.org felületére, ahol csinosabb felületen látszanak az
+            adatok. Egy gond volt csak vele, hogy a Growatt inverter adatait
+            kapásból nem tudta értelmezni, mert nem készítettek rá interfészt
+            (nem sok jót hallani a Growatt inverterekről, pedig a kedvező áruk
+            ellenére megbízhatóak). </p>
+          <p>A megoldást egy RaspberryPI-n futó script adta:Az inverter a
+            Raspberry PI-n keresztül kapcsolódik a routerhez. A PI elkapja az
+            inverter által a Growatt szervernek küldött csomagokat. Megkeresi
+            benne a szükséges termelési és egyéb adatokat, feldolgozza és küldi
+            a PVOutput.org felé is.<a href="https://api.ning.com/files/2Za8s5sYvAIbZNv6av3jx8vhm1nTCSgn6lsJJlGoSNXgyY9wAKk3xc7pSS5zrTpWou81mXgOEo1iUTBEVAtwgxKaV72zs3fN/GrowattWifiModuleviaRaspberryPitoPVOutputv2.3.pdf">
+              A teljes leírási itt található.</a></p>
+          <img src="images/Growatt_PI_PVoutput.png" alt="PI_SEMA" title="Growatt_PI_PVO"
+            style="width: 757px; height: 658px;"><br>
+          <h4>És az eredmény:</h4>
+          <a href="https://pvoutput.org/intraday.jsp?sid=41357" title="Nádastó termelés"><img
+              src="images/PVOutput.png" alt="PVOutput Sample" title="PVOutput Sample"
+              style="width: 757px; height: 310px;"></a>&nbsp; <br>
+          Vagy: <a href="https://pvoutput.org/intraday.jsp?sid=41357" title="NadastoTermeles">direkt
+            URL</a>
+          <p></p>
+          <h3> Energia monitoring </h3>
+          <p> Miután a napelem termelését már láttam a portálokon, kíváncsi
+            voltam, hogyan meg tudom-e mérni a hálózatról vételezett /
+            visszatáplált energiát. Itt a megoldást egy <a href="https://wiki.openenergymonitor.org/index.php/EmonTx_Arduino_Shield"
+              title="Emonshield">EMONCMS shield és egy Arduino mikrokontroller
+              adta két áramváltó szenzorral.</a> A mikrokontroller adatait ebben
+            az esetben is a RPI dolgozza fel egy python program segítségével és
+            továbbítja az EMONCMS felületre. (Sajnos már nem ingyenes, de nekem
+            van még egy évnyi kreditem. Aztán meglátjuk.) </p>
+          <iframe style="width: 580px; height: 400px;" marginheight="0" marginwidth="0"
+            src="https://emoncms.org/vis/multigraph?mid=15678&amp;embed=1&amp;apikey="
+            scrolling="no" frameborder="0"></iframe>
+          <h3>Időjárás:</h3>
+          <p>Az adatokat egy <a href="http://www.aercusinstruments.com/copy-of-aercus-instruments-weatherranger-professional-weather-station-with-wifi-and-real-time-internet-publishing/"
+              title="WeatherSleuth PWS (Personal Weather Station)">WeatherSleuth</a>
+            időjárás állomás szolgáltatja és a wifi routeren keresztül
+            publikálja a WeatherUnderground felületére. Az aktuális pestújhelyi
+            időjárási adatokat lásd az oldalsávon. </p>
+          <h5><a href="Megoldasok.html" title="Vissza az elejére">Vissza alap
+              tetejére</a></h5>
+          <p></p>
+          <!-- END CONTENT --> </div>
+        <div class="sidebar">
+          <!-- SIDEBAR -->
+          <h4>Megoldások</h4>
+          <br>
+          <ul>
+            <li> Napelem Monitoring</li>
+            <li> Energia Monitoring</li>
+            <li> Időjárás</li>
+          </ul>
+          <p>Pestújhely aktuális időjárási adatai:<br>
+            <a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=IBUDAPES557"><img
+                src="http://banners.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=pws250_both&amp;weatherstationcount=IBUDAPES557"
+                alt="Weather Underground PWS IBUDAPES557" width="250" height="150"
+                border="0"></a><a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=IBUDAPES557"><img
+                src="http://banners.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=WeatherStationCount&amp;weatherstationcount=IBUDAPES557"
+                alt="Weather Underground PWS IBUDAPES557" width="163" height="160"
+                border="0"></a></p>
+          <h4>Linkek</h4>
+          <ul class="blocklist">
+            <li><a href="https://www.raspberrypi.org/" title="RPI">Raspberry PI<br>
+              </a></li>
+            <!-- SIDEBAR -->
+          </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="footer-wrapper-outside">
+          <div class="footer-wrapper">
+            <div class="footer">
+              <p><a href="mailto:laszlo@gonczol.hu" title="mailto">Kapcsolat</a>
+                gonczol.hu </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
